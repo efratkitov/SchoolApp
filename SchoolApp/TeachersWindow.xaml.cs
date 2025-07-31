@@ -11,21 +11,21 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using BAL;
+using ENTITIES;
 
 namespace SchoolApp
 {
-    /// <summary>
-    /// Interaction logic for TeachersWindow.xaml
-    /// </summary>
+    
     public partial class TeachersWindow : Window
     {
         public TeachersWindow()
         {
             DataContext = this;
-            //bl = new bl;
-            //Teachers = bl.GetTeachers();
+            functions bl = new functions();
+            Teachers = bl.Readteachers();
             InitializeComponent();
         }
-        //public List<Teacher> Teachers { get; set; }
+        public List<teacher> Teachers { get; set; }
     }
 }

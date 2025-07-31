@@ -12,6 +12,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using BAL;
+using ENTITIES;
 
 namespace SchoolApp
 {
@@ -19,14 +21,15 @@ namespace SchoolApp
     /// Interaction logic for StudentsWindow.xaml
     /// </summary>
     public partial class StudentsWindow : Window
-    {
+    { 
+        public List<student> Students { get; set; }
         public StudentsWindow()
         {
             DataContext = this;
-            //bl = new bl;
-            //Students = bl.GetStudents();
+            functions bl = new functions();
+            Students = bl.ReadStudents();
             InitializeComponent();
         }
-        //public List<Students> Students { get; set; }
+        
     }
 }
